@@ -100,7 +100,7 @@ const TestimonialsSection = () => {
                 {/* Customer Image */}
                 <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden">
                   <Image
-                    src={testimonials[currentIndex].image}
+                    src={testimonials[currentIndex].avatar}
                     alt={testimonials[currentIndex].name}
                     fill
                     className="object-cover"
@@ -130,7 +130,7 @@ const TestimonialsSection = () => {
                     className="text-lg md:text-xl mb-4 italic"
                     style={{ color: theme.colors.muted }}
                   >
-                    "{testimonials[currentIndex].quote}"
+                    "{testimonials[currentIndex].content}"
                   </p>
 
                   {/* Customer Info */}
@@ -144,7 +144,7 @@ const TestimonialsSection = () => {
                     className="text-sm"
                     style={{ color: theme.colors.muted }}
                   >
-                    {testimonials[currentIndex].location}
+                    {testimonials[currentIndex].role}
                   </p>
                 </div>
               </div>
