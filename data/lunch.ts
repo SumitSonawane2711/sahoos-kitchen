@@ -190,7 +190,7 @@ export const lunchDishes: Dish[] = [
       { name: "Extra Yogurt", price: 0.50, isAvailable: true },
       { name: "Add Chutney", price: 0.25, isAvailable: true },
     ],
-    imageUrl: "/menu/veg/dahi-wada-aalo-dum.JPG",
+    imageUrl: "https://sahooskitchen.com/menu/veg/dahi-wada-aalo-dum.JPG",
     calories: 500,
     servingSize: "Serves 1",
     dailyAvailability: {
@@ -290,7 +290,7 @@ export const lunchDishes: Dish[] = [
       { name: "Add Green Chilies", price: 0.25, isAvailable: true },
       { name: "Less Oil", price: 0.00, isAvailable: true },
     ],
-    imageUrl: "/menu/veg/aalo-tomato-subji.JPG",
+    imageUrl: "https://sahooskitchen.com/menu/veg/aalo-tomato-subji.JPG",
     calories: 290,
     servingSize: "Serves 1",
     dailyAvailability: {
@@ -315,7 +315,7 @@ export const lunchDishes: Dish[] = [
       { name: "Add Garlic Tadka", price: 0.50, isAvailable: true },
       { name: "Extra Crispy", price: 0.75, isAvailable: true },
     ],
-    imageUrl: "/menu/veg/baby-aalo.JPG",
+    imageUrl: "https://sahooskitchen.com/menu/veg/baby-aalo.JPG",
     calories: 310,
     servingSize: "Serves 1",
     dailyAvailability: {

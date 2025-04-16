@@ -15,7 +15,7 @@ export const breakfastDishes: Dish[] = [
       { name: "Extra Chutney", price: 1.00, isAvailable: true },
       { name: "Ghee Roast", price: 1.50, isAvailable: true }
     ],
-    imageUrl: "/images/dishes/masala-dosa.JPG",
+    imageUrl: "https://sahooskitchen.com/images/dishes/masala-dosa.JPG",
     calories: 450,
     servingSize: "Serves 1",
     dailyAvailability: {
@@ -40,7 +40,7 @@ export const breakfastDishes: Dish[] = [
       { name: "Extra Poori", price: 1.50, isAvailable: true },
       { name: "Add Curd", price: 1.00, isAvailable: true }
     ],
-    imageUrl: "/images/dishes/poori-bhaji.JPG",
+    imageUrl: "https://sahooskitchen.com/images/dishes/poori-bhaji.JPG",
     calories: 550,
     servingSize: "Serves 1",
     dailyAvailability: {
@@ -115,7 +115,7 @@ export const breakfastDishes: Dish[] = [
       { name: "Extra Cheese", price: 1.00, isAvailable: true },
       { name: "Add Veggies", price: 0.75, isAvailable: true },
     ],
-    imageUrl: "/menu/veg/kulhad-pizaa.JPG",
+    imageUrl: "https://sahooskitchen.com/menu/veg/kulhad-pizaa.JPG",
     calories: 350,
     servingSize: "Serves 1",
     dailyAvailability: {
@@ -141,7 +141,7 @@ export const breakfastDishes: Dish[] = [
       { name: "Mint Chutney", price: 0.50, isAvailable: true },
       { name: "Extra Dip", price: 0.75, isAvailable: true },
     ],
-    imageUrl: "/menu/veg/dahi-kabab.JPG",
+    imageUrl: "https://sahooskitchen.com/menu/veg/dahi-kabab.JPG",
     calories: 280,
     servingSize: "Serves 1",
     dailyAvailability: {
@@ -166,7 +166,7 @@ export const breakfastDishes: Dish[] = [
       { name: "Extra Sauce", price: 0.75, isAvailable: true },
       { name: "Add Fried Rice", price: 2.00, isAvailable: true },
     ],
-    imageUrl: "/menu/veg/manchurian.JPG",
+    imageUrl: "https://sahooskitchen.com/menu/veg/manchurian.JPG",
     calories: 320,
     servingSize: "Serves 1",
     dailyAvailability: {
@@ -191,7 +191,7 @@ export const breakfastDishes: Dish[] = [
       { name: "Add Coconut Milk", price: 0.50, isAvailable: true },
       { name: "Add Vegetable Stew", price: 1.00, isAvailable: true },
     ],
-    imageUrl: "/menu/veg/idiyappam.JPG",
+    imageUrl: "https://sahooskitchen.com/menu/veg/idiyappam.JPG",
     calories: 250,
     servingSize: "Serves 1",
     dailyAvailability: {
@@ -217,7 +217,7 @@ export const breakfastDishes: Dish[] = [
       { name: "Extra Masala", price: 0.75, isAvailable: true },
       { name: "Add Lemon Wedges", price: 0.50, isAvailable: true },
     ],
-    imageUrl: "/menu/no-veg/paplet.JPG",
+    imageUrl: "https://sahooskitchen.com/menu/no-veg/paplet.JPG",
     calories: 420,
     servingSize: "Serves 1",
     dailyAvailability: {

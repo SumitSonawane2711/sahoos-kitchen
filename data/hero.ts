@@ -1,21 +1,21 @@
 export const heroImages = [
   {
     id: 1,
-    src: "/p1.JPG",
+    src: "https://sahooskitchen.com/p1.JPG",
     alt: "Restaurant Interior",
     title: "Elegant Dining Experience",
     description: "Experience fine dining in our beautifully designed space"
   },
   {
     id: 2,
-    src: "/p2.JPG",
+    src: "https://sahooskitchen.com/p2.JPG",
     alt: "Chef Preparing Food",
     title: "Master Chef Creations",
     description: "Crafted by our award-winning culinary team"
   },
   {
     id: 3,
-    src: "/p3.JPG",
+    src: "https://sahooskitchen.com/p3.JPG",
     alt: "Signature Dish",
     title: "Exquisite Cuisine",
     description: "Savor the finest flavors from around the world"
