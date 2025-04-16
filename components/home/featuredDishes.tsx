@@ -6,7 +6,7 @@ import { dinnerDishes } from "@/data/dinner";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useRef, useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import { theme } from "@/data/site";
@@ -134,10 +134,10 @@ function DishCard({ dish }: { dish: any }) {
 // New compact dish card component optimized for mobile view
 function CompactDishCard({ dish, onOpenDetail }: { dish: any; onOpenDetail: (dish: any) => void }) {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
-  
+
   return (
-    <motion.div variants={itemVariants}>
-      <Card 
+    <motion.div variants={itemVariants}  whileHover={{ y: -10, transition: { duration: 0.3 } }} >
+      <Card
         className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group h-full cursor-pointer"
         onClick={() => onOpenDetail(dish)}
       >
@@ -145,7 +145,7 @@ function CompactDishCard({ dish, onOpenDetail }: { dish: any; onOpenDetail: (dis
           <LazyImage src={dish.imageUrl} alt={dish.name} />
           <div className="absolute top-2 sm:top-4 right-2 sm:right-4 z-10">
             <Badge
-              className="text-white bg-secondary/90 text-[10px] sm:text-xs px-1 sm:px-2"
+              className="text-white bg-secondary/80 text-[10px] sm:text-xs px-1 sm:px-2"
             >
               {dish.menuType}
             </Badge>
@@ -175,7 +175,7 @@ function CompactDishCard({ dish, onOpenDetail }: { dish: any; onOpenDetail: (dis
               ₹{dish.price}
             </span>
             <Button
-              className="text-white bg-secondary text-xs sm:text-sm px-2 sm:px-4 h-7 sm:h-auto"
+              className="text-white bg-primary/60 text-xs sm:text-sm px-2 sm:px-4 h-7 sm:h-auto"
               onClick={(e) => {
                 e.stopPropagation(); // Prevent card click event
                 // Handle order button click separately if needed
@@ -194,6 +194,7 @@ export default function FeaturedDishes() {
   const sectionRef = useRef(null);
   const [isSectionVisible, setIsSectionVisible] = useState(false);
   const [selectedDish, setSelectedDish] = useState<any | null>(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   // Function to handle opening dish detail
   const handleOpenDishDetail = (dish: any) => {
@@ -246,25 +247,22 @@ export default function FeaturedDishes() {
           isSpecial={true}
         />
       )}
-      
-      <section 
-        ref={sectionRef} 
-        className="py-16 md:py-24 bg-white"
+
+      <section
+        ref={sectionRef}
+        className="pt-32 md:py-24 bg-white"
         aria-label="Featured Dishes"
       >
         <div className="container mx-auto px-4">
+          {/* Section Title */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
-            animate={isSectionVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12 md:mb-16"
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-8 sm:mb-16"
           >
             <h2
               className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
-              style={{
-                fontFamily: theme.fonts.heading,
-                color: theme.colors.primary,
-              }}
             >
               Featured Dishes
             </h2>
@@ -288,32 +286,16 @@ export default function FeaturedDishes() {
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            animate={isSectionVisible ? "visible" : "hidden"}
+            animate={isInView ? "visible" : "hidden"}
             className="grid grid-cols-3 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-6"
           >
-            {specialDishes.length === 0
-              ? Array(4).fill(0).map((_, index) => (
-                  <Card key={index} className="overflow-hidden h-full">
-                    <div className="relative h-32 sm:h-48">
-                      <Skeleton className="h-full w-full" />
-                    </div>
-                    <CardContent className="p-2 sm:p-4">
-                      <Skeleton className="h-4 w-3/4 mb-2" />
-                      <Skeleton className="h-4 w-full mb-4" />
-                      <div className="flex items-center justify-between">
-                        <Skeleton className="h-6 w-20" />
-                        <Skeleton className="h-10 w-28" />
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))
-              : specialDishes.map((dish) => (
-                  <CompactDishCard 
-                    key={dish.id} 
-                    dish={dish} 
-                    onOpenDetail={handleOpenDishDetail}
-                  />
-                ))}
+            {specialDishes.map((dish) => (
+              <CompactDishCard
+                key={dish.id}
+                dish={dish}
+                onOpenDetail={handleOpenDishDetail}
+              />
+            ))}
           </motion.div>
         </div>
       </section>
@@ -335,9 +317,9 @@ export default function FeaturedDishes() {
               className="w-full max-w-4xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <DishDetail 
-                dish={selectedDish} 
-                onClose={handleCloseDishDetail} 
+              <DishDetail
+                dish={selectedDish}
+                onClose={handleCloseDishDetail}
               />
             </motion.div>
           </motion.div>

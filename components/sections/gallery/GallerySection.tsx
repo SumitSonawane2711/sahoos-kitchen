@@ -22,7 +22,7 @@ interface Category {
 const galleryImages: GalleryImage[] = [
   {
     id: 1,
-    src: "/p1.jpg",
+    src: "/https://sahooskitchen.com/p2.JPG",
     alt: "Restaurant Interior",
     category: "interior",
     title: "Elegant Dining Space"

@@ -158,7 +158,7 @@ const ContactSection = () => {
                     <option value="">Select a subject</option>
                     <option value="reservation">Reservation</option>
                     <option value="feedback">Feedback</option>
-                    <option value="catering">Catering Services</option>
+                   
                     <option value="other">Other</option>
                   </select>
                 </div>

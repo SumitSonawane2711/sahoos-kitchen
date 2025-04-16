@@ -164,11 +164,12 @@ const AboutSection = () => {
                 </motion.div>
               )}
               
-              <motion.div variants={itemVariants}>
+              {/* <motion.div variants={itemVariants}>
+                
                 <button className="bg-secondary text-primary px-8 py-3 rounded-full text-lg font-semibold hover:bg-secondary-dark transition-all duration-300 shadow-md hover:shadow-lg">
                   {activeTab === 'team' ? 'Join Our Team' : activeTab === 'values' ? 'Learn More' : 'Visit Us'}
                 </button>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           </div>
         </motion.div>

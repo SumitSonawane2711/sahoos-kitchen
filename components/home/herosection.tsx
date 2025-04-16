@@ -128,12 +128,12 @@ const HeroSection = () => {
             className="w-full max-w-4xl mx-auto"
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-3 sm:mb-6" style={{ fontFamily: theme.fonts.heading }}>
-              Welcome to <span className="text-secondary">Sahoos</span> Kitchen
+              Welcome to <span className="text-secondary">Sahoos Cloud</span> Kitchen
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-5 sm:mb-8 max-w-2xl mx-auto" style={{ fontFamily: theme.fonts.body }}>
               Experience the authentic taste of traditional cuisine in a modern setting
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
               <Link href={'/menu'}>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -161,9 +161,9 @@ const HeroSection = () => {
       </div>
 
       {/* Features Cards */}
-      <div className="absolute -bottom-20 sm:-bottom-16 md:-bottom-12 left-0 right-0 z-20">
+      <div className="absolute -bottom-28 sm:-bottom-16 md:-bottom-12 left-0 right-0 z-20">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.id}
@@ -173,13 +173,13 @@ const HeroSection = () => {
               >
                 <Card className="bg-white/90 backdrop-blur-sm border-none shadow-xl hover:shadow-2xl transition-shadow">
                   <CardContent className="p-4 sm:p-6">
-                    <div className="flex items-center gap-3 sm:gap-4">
-                      <div className="bg-accent/20 p-2 sm:p-3 rounded-full" style={{ backgroundColor: `${theme.colors.accent}20` }}>
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                      <div className="bg-accent/20 p-1 sm:p-3 rounded-full" style={{ backgroundColor: `${theme.colors.accent}20` }}>
                         {getIcon(feature.icon)}
                       </div>
                       <div>
-                        <h3 className="text-lg sm:text-xl font-semibold" style={{ color: theme.colors.primary }}>{feature.title}</h3>
-                        <p className="text-sm sm:text-base" style={{ color: theme.colors.muted }}>{feature.description}</p>
+                        <h3 className="text-base sm:text-xl font-semibold" style={{ color: theme.colors.primary }}>{feature.title}</h3>
+                        <p className="text-xs sm:text-base" style={{ color: theme.colors.muted }}>{feature.description}</p>
                       </div>
                     </div>
                   </CardContent>

@@ -51,7 +51,7 @@ export function Navbar() {
   ];
 
   const socialLinks = [
-    { href: "https://twitter.com", icon: <Twitter className="h-5 w-5" />, label: "Twitter" },
+    // { href: "https://twitter.com", icon: <Twitter className="h-5 w-5" />, label: "Twitter" },
     { href: "https://facebook.com", icon: <Facebook className="h-5 w-5" />, label: "Facebook" },
     { href: "https://instagram.com", icon: <Instagram className="h-5 w-5" />, label: "Instagram" },
   ];
