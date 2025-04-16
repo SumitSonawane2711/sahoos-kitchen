@@ -6,13 +6,14 @@ import { dinnerDishes } from "@/data/dinner";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useRef, useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import { theme } from "@/data/site";
 import { Clock, Utensils } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { FoodItemSchema } from "@/components/seo/SchemaMarkup";
+import DishDetail from "@/components/dish/DishDetail";
 
 // Default image for dishes
 const DEFAULT_DISH_IMAGE = "/images/default-dish.jpg";
@@ -130,9 +131,79 @@ function DishCard({ dish }: { dish: any }) {
   );
 }
 
+// New compact dish card component optimized for mobile view
+function CompactDishCard({ dish, onOpenDetail }: { dish: any; onOpenDetail: (dish: any) => void }) {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+  
+  return (
+    <motion.div variants={itemVariants}>
+      <Card 
+        className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group h-full cursor-pointer"
+        onClick={() => onOpenDetail(dish)}
+      >
+        <div className="relative h-28 sm:h-48 bg-gray-100">
+          <LazyImage src={dish.imageUrl} alt={dish.name} />
+          <div className="absolute top-2 sm:top-4 right-2 sm:right-4 z-10">
+            <Badge
+              className="text-white bg-secondary/90 text-[10px] sm:text-xs px-1 sm:px-2"
+            >
+              {dish.menuType}
+            </Badge>
+          </div>
+          <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4 z-10">
+            <h3 className="text-white font-semibold text-xs sm:text-lg mb-0 sm:mb-1 line-clamp-1">{dish.name}</h3>
+            <div className="hidden sm:flex items-center gap-2 text-white/90 text-sm">
+              <span className="flex items-center gap-1">
+                <Clock className="h-3 w-3" /> {dish.prepTime} mins
+              </span>
+              <span className="flex items-center gap-1">
+                <Utensils className="h-3 w-3" /> {dish.subcategory}
+              </span>
+            </div>
+          </div>
+        </div>
+        <CardContent className="p-2 sm:p-4">
+          <p
+            className="text-xs sm:text-sm mb-2 sm:mb-4 line-clamp-1 sm:line-clamp-2 text-muted-foreground"
+          >
+            {dish.description}
+          </p>
+          <div className="flex items-center justify-between">
+            <span
+              className="text-sm sm:text-lg font-semibold text-primary"
+            >
+              ₹{dish.price}
+            </span>
+            <Button
+              className="text-white bg-secondary text-xs sm:text-sm px-2 sm:px-4 h-7 sm:h-auto"
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent card click event
+                // Handle order button click separately if needed
+              }}
+            >
+              {isMobile ? "Order" : "Order Now"}
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>
+  );
+}
+
 export default function FeaturedDishes() {
   const sectionRef = useRef(null);
   const [isSectionVisible, setIsSectionVisible] = useState(false);
+  const [selectedDish, setSelectedDish] = useState<any | null>(null);
+
+  // Function to handle opening dish detail
+  const handleOpenDishDetail = (dish: any) => {
+    setSelectedDish(dish);
+  };
+
+  // Function to handle closing dish detail
+  const handleCloseDishDetail = () => {
+    setSelectedDish(null);
+  };
 
   // One-time IntersectionObserver for the section
   useEffect(() => {
@@ -213,19 +284,20 @@ export default function FeaturedDishes() {
             </p>
           </motion.div>
 
+          {/* Modified grid layout for better mobile UI */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={isSectionVisible ? "visible" : "hidden"}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            className="grid grid-cols-3 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-6"
           >
             {specialDishes.length === 0
               ? Array(4).fill(0).map((_, index) => (
                   <Card key={index} className="overflow-hidden h-full">
-                    <div className="relative h-48">
+                    <div className="relative h-32 sm:h-48">
                       <Skeleton className="h-full w-full" />
                     </div>
-                    <CardContent className="p-4">
+                    <CardContent className="p-2 sm:p-4">
                       <Skeleton className="h-4 w-3/4 mb-2" />
                       <Skeleton className="h-4 w-full mb-4" />
                       <div className="flex items-center justify-between">
@@ -236,11 +308,41 @@ export default function FeaturedDishes() {
                   </Card>
                 ))
               : specialDishes.map((dish) => (
-                  <DishCard key={dish.id} dish={dish} />
+                  <CompactDishCard 
+                    key={dish.id} 
+                    dish={dish} 
+                    onOpenDetail={handleOpenDishDetail}
+                  />
                 ))}
           </motion.div>
         </div>
       </section>
+
+      {/* Dish Detail Modal */}
+      <AnimatePresence>
+        {selectedDish && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 md:p-6"
+            onClick={handleCloseDishDetail}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="w-full max-w-4xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <DishDetail 
+                dish={selectedDish} 
+                onClose={handleCloseDishDetail} 
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

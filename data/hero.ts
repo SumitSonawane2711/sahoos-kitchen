@@ -1,7 +1,7 @@
 export const heroImages = [
   {
     id: 1,
-    src: "/p1.jpg",
+    src: "/p1.JPG",
     alt: "Restaurant Interior",
     title: "Elegant Dining Experience",
     description: "Experience fine dining in our beautifully designed space"
@@ -15,7 +15,7 @@ export const heroImages = [
   },
   {
     id: 3,
-    src: "/p1.jpg",
+    src: "/p3.JPG",
     alt: "Signature Dish",
     title: "Exquisite Cuisine",
     description: "Savor the finest flavors from around the world"

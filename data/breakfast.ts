@@ -15,7 +15,7 @@ export const breakfastDishes: Dish[] = [
       { name: "Extra Chutney", price: 1.00, isAvailable: true },
       { name: "Ghee Roast", price: 1.50, isAvailable: true }
     ],
-    imageUrl: "/images/dishes/masala-dosa.jpg",
+    imageUrl: "/images/dishes/masala-dosa.JPG",
     calories: 450,
     servingSize: "Serves 1",
     dailyAvailability: {
@@ -40,7 +40,7 @@ export const breakfastDishes: Dish[] = [
       { name: "Extra Poori", price: 1.50, isAvailable: true },
       { name: "Add Curd", price: 1.00, isAvailable: true }
     ],
-    imageUrl: "/images/dishes/poori-bhaji.jpg",
+    imageUrl: "/images/dishes/poori-bhaji.JPG",
     calories: 550,
     servingSize: "Serves 1",
     dailyAvailability: {
@@ -65,7 +65,7 @@ export const breakfastDishes: Dish[] = [
       { name: "Extra Sambar", price: 1.00, isAvailable: true },
       { name: "Add Vada", price: 2.00, isAvailable: true }
     ],
-    imageUrl: "/images/dishes/idli-sambar.jpg",
+    imageUrl: "/images/dishes/idli-sambar.JPG",
     calories: 300,
     servingSize: "Serves 1 (4 pieces)",
     dailyAvailability: {
@@ -90,7 +90,7 @@ export const breakfastDishes: Dish[] = [
       { name: "Extra Bhatura", price: 2.00, isAvailable: true },
       { name: "Add Lassi", price: 2.50, isAvailable: true }
     ],
-    imageUrl: "/images/dishes/chole-bhature.jpg",
+    imageUrl: "/images/dishes/chole-bhature.JPG",
     calories: 750,
     servingSize: "Serves 1",
     dailyAvailability: {

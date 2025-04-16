@@ -15,7 +15,7 @@ export const lunchDishes: Dish[] = [
       { "name": "Extra Roti", "price": 1.00, "isAvailable": true },
       { "name": "Add Papad", "price": 0.50, "isAvailable": true }
     ],
-    "imageUrl": "/images/dishes/thali-special.jpg",
+    "imageUrl": "/images/dishes/thali-special.JPG",
     "calories": 850,
     "servingSize": "Serves 1",
     "dailyAvailability": {
