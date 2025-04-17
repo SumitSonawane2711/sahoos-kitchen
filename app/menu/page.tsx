@@ -268,7 +268,7 @@ export default function MenuPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-32 pb-10 sm:py-0">
+    <div className="min-h-screen bg-gray-50 py-32">
       {/* Fixed header and search for mobile */}
       <div className="sticky top-0 z-10 bg-white shadow-sm px-3 pt-3 pb-2 mb-4 sm:mb-0 sm:relative sm:shadow-none sm:px-0 sm:pt-0 sm:pb-0">
         <motion.h1
@@ -284,7 +284,7 @@ export default function MenuPage() {
           Our Menu
         </motion.h1>
         
-        <div className="flex items-center gap-2 mb-2 px-1 sm:px-0">
+        <div className="flex sm:hidden items-center gap-2 mb-2 px-1 sm:px-0">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
             <Input
