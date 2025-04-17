@@ -63,7 +63,7 @@ export default function Home() {
       <main className="min-h-screen">
         <HeroSection />
         <FeaturedDishes />
-        <WeeklyMenuPreview />
+        {/* <WeeklyMenuPreview /> */}
         <SpecialOffersSection />
         <TestimonialsSection />
       </main>

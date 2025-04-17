@@ -128,7 +128,7 @@ const HeroSection = () => {
             className="w-full max-w-4xl mx-auto"
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-3 sm:mb-6" style={{ fontFamily: theme.fonts.heading }}>
-              Welcome to <span className="text-secondary">Sahoos Cloud</span> Kitchen
+              Welcome to <span className="text-secondary">Sahoo's Cloud</span> Kitchen
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-5 sm:mb-8 max-w-2xl mx-auto" style={{ fontFamily: theme.fonts.body }}>
               Experience the authentic taste of traditional cuisine in a modern setting
