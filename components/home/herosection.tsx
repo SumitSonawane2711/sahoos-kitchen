@@ -145,7 +145,7 @@ const HeroSection = () => {
                 </motion.button>
               </Link>
 
-              <Link href={'/weekly-menu'}>
+              {/* <Link href={'/weekly-menu'}>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -154,7 +154,7 @@ const HeroSection = () => {
                 >
                   Subscriptions
                 </motion.button>
-              </Link>
+              </Link> */}
             </div>
           </motion.div>
         </div>

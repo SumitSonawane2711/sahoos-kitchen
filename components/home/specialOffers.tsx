@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import { Clock, Calendar, Tag, Percent } from 'lucide-react';
+import Link from 'next/link';
 
 const specialOffers = [
   {
@@ -13,7 +14,7 @@ const specialOffers = [
     discount: "20% Off",
     validUntil: "Every Friday & Saturday",
     timing: "7:00 PM - 11:00 PM",
-    image: "/p1.jpg",
+    image: "https://sahooskitchen.com/p1.JPG",
     color: "primary",
   },
   {
@@ -23,7 +24,7 @@ const specialOffers = [
     discount: "15% Off",
     validUntil: "Monday to Friday",
     timing: "12:00 PM - 3:00 PM",
-    image: "/menu/veg/dahi-kabab.jpg",
+    image: "https://sahooskitchen.com/menu/veg/dahi-kabab.JPG",
     color: "secondary",
   },
   {
@@ -33,7 +34,7 @@ const specialOffers = [
     discount: "Free Dessert",
     validUntil: "Valid all days",
     timing: "Booking required",
-    image: "/menu/veg/dahi-wada.jpg",
+    image: "https://sahooskitchen.com/menu/veg/dahi-wada.JPG",
     color: "accent",
   }
 ];
@@ -63,9 +64,9 @@ const SpecialOffersSection = () => {
   };
 
   return (
-    <section 
-      ref={sectionRef} 
-      className=" bg-gradient-to-b from-white to-amber-50"
+    <section
+      ref={sectionRef}
+      className=" pt-12 sm:pt-0 bg-gradient-to-b from-white to-amber-50"
     >
       <div className="container mx-auto px-4">
         {/* Section Title */}
@@ -99,8 +100,8 @@ const SpecialOffersSection = () => {
               <div className="relative h-full bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 {/* Image Section */}
                 <div className="relative h-48 w-full">
-                  <Image 
-                    src={offer.image} 
+                  <Image
+                    src={offer.image}
                     alt={offer.title}
                     fill
                     className="object-cover"
@@ -111,12 +112,12 @@ const SpecialOffersSection = () => {
                     <span className="font-bold text-primary text-sm">{offer.discount}</span>
                   </div>
                 </div>
-                
+
                 {/* Content Section */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors duration-300">{offer.title}</h3>
                   <p className="text-gray-600 mb-5 text-sm">{offer.description}</p>
-                  
+
                   {/* Details */}
                   <div className="space-y-2">
                     <div className="flex items-center text-sm text-gray-500">
@@ -128,21 +129,23 @@ const SpecialOffersSection = () => {
                       <span>{offer.timing}</span>
                     </div>
                   </div>
-                  
+
                   {/* CTA Button */}
-                  <button className="mt-6 w-full bg-primary text-white py-2 rounded-lg hover:bg-primary-dark transition-colors duration-300 flex items-center justify-center">
-                    <Tag className="h-4 w-4 mr-2" />
-                    Claim Offer
-                  </button>
+                  <Link href="/contact">
+                    <button className="mt-6 w-full bg-primary text-white py-2 rounded-lg hover:bg-primary-dark transition-colors duration-300 flex items-center justify-center">
+                      <Tag className="h-4 w-4 mr-2" />
+                      Claim Offer
+                    </button>
+                  </Link>
                 </div>
-                
+
                 {/* Decorative Element */}
                 <div className="absolute -bottom-2 -right-2 h-16 w-16 bg-secondary/20 rounded-tl-3xl"></div>
               </div>
             </motion.div>
           ))}
         </motion.div>
-        
+
         {/* Newsletter Subscription */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -154,22 +157,22 @@ const SpecialOffersSection = () => {
           <p className="text-gray-600 mb-6 md:mb-8 max-w-2xl mx-auto">
             Subscribe to our newsletter and be the first to know about our latest offers, seasonal menus, and exclusive events.
           </p>
-          
+
           <form className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
-            <input 
-              type="email" 
-              placeholder="Your email address" 
+            <input
+              type="email"
+              placeholder="Your email address"
               className="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none"
               required
             />
-            <button 
+            <button
               type="submit"
               className="bg-secondary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-secondary-dark transition-colors duration-300 whitespace-nowrap"
             >
               Subscribe Now
             </button>
           </form>
-          
+
           <p className="mt-4 text-xs text-gray-500">
             By subscribing, you agree to receive marketing communications from us. Don't worry, we respect your privacy.
           </p>

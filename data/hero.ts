@@ -45,7 +45,7 @@ export const features = [
   {
     id: 3,
     title: "Open Daily",
-    description: "11:00 AM - 11:00 PM",
+    description: "11:00 AM - 05:00 PM",
     icon: "clock"
   }
 ];

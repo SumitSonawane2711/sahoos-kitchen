@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Clock, Utensils, Heart, ShoppingBag, X } from "lucide-react";
+import { Clock, Utensils, Heart, ShoppingBag, X, Phone } from "lucide-react";
 import { theme } from '@/data/site';
 
 interface DishDetailProps {
@@ -121,9 +121,12 @@ const DishDetail = ({ dish, onClose }: DishDetailProps) => {
             <Button 
               className="w-full text-white" 
               style={{ backgroundColor: theme.colors.secondary }}
+              onClick={() => window.location.href = 'tel:+1234567890'}
             >
-              <ShoppingBag className="mr-2 h-4 w-4" /> Add to Cart
+              <Phone className="mr-2 h-4 w-4" /> Contact to Order
+              {/* <ShoppingBag className="mr-2 h-4 w-4" /> Add to Cart */}
             </Button>
+            
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@ const mealTimeCategories = [
   { id: 'all', name: 'All' },
   { id: 'Breakfast', name: 'Breakfast' },
   { id: 'Lunch', name: 'Lunch' },
-  { id: 'Dinner', name: 'Dinner' }
+  // { id: 'Dinner', name: 'Dinner' }
 ];
 
 // Define sort options
@@ -268,14 +268,14 @@ export default function MenuPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-32 ">
+    <div className="min-h-screen bg-gray-50 pt-32 pb-10 sm:py-0">
       {/* Fixed header and search for mobile */}
       <div className="sticky top-0 z-10 bg-white shadow-sm px-3 pt-3 pb-2 mb-4 sm:mb-0 sm:relative sm:shadow-none sm:px-0 sm:pt-0 sm:pb-0">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
-          className="text-2xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-4 sm:text-center"
+          className="text-2xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-4 sm:text-center px-1"
           style={{
             color: theme.colors.primary,
             fontFamily: theme.fonts.heading
@@ -283,20 +283,8 @@ export default function MenuPage() {
         >
           Our Menu
         </motion.h1>
-        {/* Desktop header and description - hidden on mobile */}
-        <div className="hidden sm:block text-center mb-10">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
-            style={{ fontFamily: theme.fonts.body }}
-          >
-            Discover our wide range of authentic dishes, crafted with love and tradition
-          </motion.p>
-        </div>
-
-        <div className="sm:hidden flex mx-6 items-center gap-2 mb-2">
+        
+        <div className="flex items-center gap-2 mb-2 px-1 sm:px-0">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
             <Input
@@ -307,11 +295,11 @@ export default function MenuPage() {
               className="pl-8 py-5 h-10 text-sm border-gray-200 rounded-full"
             />
           </div>
-
+          
           <Drawer open={isFilterDrawerOpen} onOpenChange={setIsFilterDrawerOpen}>
             <DrawerTrigger asChild>
-              <Button
-                variant="outline"
+              <Button 
+                variant="outline" 
                 size="sm"
                 className="rounded-full h-10 w-10 p-0 flex items-center justify-center relative border-gray-200"
               >
@@ -323,14 +311,14 @@ export default function MenuPage() {
                 )}
               </Button>
             </DrawerTrigger>
-            <DrawerContent className="px-4 pb-6">
+            <DrawerContent className="px-4 pb-6 mx-2">
               <DrawerHeader className="px-0 pb-3">
                 <DrawerTitle>Filters</DrawerTitle>
                 <DrawerDescription>
                   Customize your menu view
                 </DrawerDescription>
               </DrawerHeader>
-
+              
               {/* Meal Time Filter */}
               <div className="mb-6">
                 <h3 className="text-sm font-medium mb-2">Meal Time</h3>
@@ -352,7 +340,7 @@ export default function MenuPage() {
                   ))}
                 </div>
               </div>
-
+              
               {/* Dietary Preference Filter */}
               <div className="mb-6">
                 <h3 className="text-sm font-medium mb-2">Dietary Preference</h3>
@@ -417,24 +405,23 @@ export default function MenuPage() {
         </div>
       </div>
 
-      <div className="px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-
+      <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        {/* Desktop header and description - hidden on mobile */}
+        <div className="hidden sm:block text-center mb-10">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            style={{ fontFamily: theme.fonts.body }}
+          >
+            Discover our wide range of authentic dishes, crafted with love and tradition
+          </motion.p>
+        </div>
 
         {/* Desktop Search and Filter Section - hidden on mobile */}
         <div className="hidden sm:block mb-8 space-y-4">
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-            {/* Search Bar */}
-            <div className="relative w-full sm:w-96">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-              <Input
-                type="text"
-                placeholder="Search dishes, ingredients..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 w-full"
-              />
-            </div>
-
             {/* Filter and Sort Options */}
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               {/* Dietary Preference Filter */}
@@ -513,11 +500,11 @@ export default function MenuPage() {
             ))}
           </div>
         ) : (
-          <div className="space-y-6 sm:space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {/* Vegetarian Section */}
             {vegDishes.length > 0 && (
               <div>
-                <div className="flex items-center justify-between mb-3 sm:mb-6">
+                <div className="flex items-center justify-between mb-3 sm:mb-6 px-1 sm:px-0">
                   <div className="flex items-center gap-1 sm:gap-2">
                     <Leaf className="h-4 w-4 sm:h-6 sm:w-6 text-green-500" />
                     <h2 className="text-lg sm:text-2xl font-semibold" style={{ color: theme.colors.primary }}>
@@ -542,7 +529,7 @@ export default function MenuPage() {
             {/* Non-Vegetarian Section */}
             {nonVegDishes.length > 0 && (
               <div>
-                <div className="flex items-center justify-between mb-3 sm:mb-6">
+                <div className="flex items-center justify-between mb-3 sm:mb-6 px-1 sm:px-0">
                   <div className="flex items-center gap-1 sm:gap-2">
                     <Utensils className="h-4 w-4 sm:h-6 sm:w-6 text-red-500" />
                     <h2 className="text-lg sm:text-2xl font-semibold" style={{ color: theme.colors.primary }}>
@@ -568,11 +555,11 @@ export default function MenuPage() {
 
         {/* No Results Message */}
         {!isLoading && filteredDishes.length === 0 && (
-          <div className="text-center py-12">
+          <div className="text-center py-12 px-4">
             <p className="text-lg text-gray-600">
               No dishes found matching your search criteria.
             </p>
-            <Button
+            <Button 
               onClick={resetFilters}
               variant="outline"
               className="mt-4"

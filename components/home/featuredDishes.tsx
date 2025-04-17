@@ -307,14 +307,14 @@ export default function FeaturedDishes() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 md:p-6"
+            className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-2 py-24 sm:p-4 md:p-6"
             onClick={handleCloseDishDetail}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="w-full max-w-4xl"
+              className="w-full max-w-4xl mx-2 sm:mx-4 md:mx-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <DishDetail

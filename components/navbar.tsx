@@ -53,7 +53,7 @@ export function Navbar() {
   const socialLinks = [
     // { href: "https://twitter.com", icon: <Twitter className="h-5 w-5" />, label: "Twitter" },
     { href: "https://facebook.com", icon: <Facebook className="h-5 w-5" />, label: "Facebook" },
-    { href: "https://instagram.com", icon: <Instagram className="h-5 w-5" />, label: "Instagram" },
+    { href: "https://www.instagram.com/sahooskitchen_nashik", icon: <Instagram className="h-5 w-5" />, label: "Instagram" },
   ];
 
   const handleDropdownToggle = (label: string) => {
@@ -177,6 +177,7 @@ export function Navbar() {
               ))}
 
               {/* Social Media Icons */}
+
               <div className="flex items-center space-x-1 pl-2 border-l border-white/20">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -208,17 +209,33 @@ export function Navbar() {
               </motion.div>
             </div>
 
+
             {/* Mobile Navigation Button */}
-            <motion.button
-              onClick={() => setIsOpen(!isOpen)}
-              className={`md:hidden ${getTextColor()} p-2 rounded-full ${getHoverBgColor()} transition-colors`}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="Toggle menu"
-              aria-expanded={isOpen}
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </motion.button>
+            <div className=" flex sm:hidden items-center gap-2">
+              {/* Menu Card Button - Replaced Order Now */}
+              <motion.div
+              >
+                <button
+                  onClick={() => setMenuCardOpen(true)}
+                  className=" bg-secondary text-primary ml-2 px-5 py-2 rounded-full text-sm uppercase font-bold transition-all duration-300 flex items-center"
+                >
+                  Menu Card
+                </button>
+              </motion.div>
+              <motion.button
+                onClick={() => setIsOpen(!isOpen)}
+                className={` ${getTextColor()}  p-2 rounded-full ${getHoverBgColor()} transition-colors`}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label="Toggle menu"
+                aria-expanded={isOpen}
+              >
+                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </motion.button>
+            </div>
+
+
+
           </div>
         </div>
 
@@ -286,9 +303,10 @@ export function Navbar() {
                     )}
                   </div>
                 ))}
-                
+
                 {/* Menu Card Button for Mobile */}
                 <div className="mt-4 pt-4 border-t border-white/10">
+
                   <button
                     onClick={() => {
                       setMenuCardOpen(true);
@@ -304,7 +322,7 @@ export function Navbar() {
           )}
         </AnimatePresence>
       </motion.nav>
-      
+
       {/* Menu Card Popup */}
       <MenuCardPopup open={menuCardOpen} onOpenChange={setMenuCardOpen} />
     </>
