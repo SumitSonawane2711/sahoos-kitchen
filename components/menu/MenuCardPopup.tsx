@@ -23,15 +23,21 @@ const breakfastMenus: MenuImageType[] = [
   {
     id: "main course",
     title: "Main Course Menu",
-    path: "/menucard.jpeg", // Placeholder - Update with actual path
+    path: "/menu/main-course.jpeg", // Placeholder - Update with actual path
     description: "Our special vegetarian breakfast options",
   },
-  // {
-  //   id: "nonveg-breakfast",
-  //   title: "Non-Vegetarian Breakfast Menu",
-  //   path: "/menu/no-veg/breakfast.jpg", // Placeholder - Update with actual path
-  //   description: "Delicious non-vegetarian breakfast specialties",
-  // },
+  {
+    id: "Breakfast-Subscription",
+    title: "Non-Vegetarian Breakfast Menu",
+    path: "/menu/breakfast.jpeg", // Placeholder - Update with actual path
+    description: "Delicious non-vegetarian breakfast specialties",
+  },
+  {
+    id: "Weekly-Combo Menu",
+    title: "Non-Vegetarian Breakfast Menu",
+    path: "/menu/weekly-combo.jpeg", // Placeholder - Update with actual path
+    description: "Delicious non-vegetarian breakfast specialties",
+  },
 ];
 
 // Weekly combo menu images

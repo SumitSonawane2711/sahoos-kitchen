@@ -31,6 +31,12 @@ export const heroImages = [
 
 export const features = [
   {
+    id: 3,
+    title: "Monday-Friday",
+    description: "11:00 AM - 05:00 PM ,  11:00 AM - 05:00 PM ",
+    icon: "clock"
+  },
+  {
     id: 1,
     title: "Authentic Cuisine",
     description: "Traditional recipes with modern twist",
@@ -42,12 +48,7 @@ export const features = [
     description: "Check out our weekly menu",
     icon: "star"
   },
-  {
-    id: 3,
-    title: "Open Daily",
-    description: "11:00 AM - 05:00 PM",
-    icon: "clock"
-  }
+
 ];
 
 export const stats = [

@@ -11,7 +11,7 @@ export function Footer() {
     <footer style={{ backgroundColor: `${theme.colors.primary}` }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Newsletter Section */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ export function Footer() {
               </div>
             </motion.div>
           </div>
-        </div>
+        </div> */}
 
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
@@ -97,11 +97,11 @@ export function Footer() {
               </p>
               <p className="flex items-center text-white/80">
                 <MapPin className="h-5 w-5 mr-3 text-secondary" style={{ color: theme.colors.secondary }} />
-                123 Food Street, Bhubaneswar
+                2A Phoenix Appartment, TrambakRoad Nashik.
               </p>
               <p className="flex items-center text-white/80">
                 <Clock className="h-5 w-5 mr-3 text-secondary" style={{ color: theme.colors.secondary }} />
-                Mon-Sun: 11:00 AM - 10:00 PM
+                Mon-Sun: 8:00 AM - 9:00 PM
               </p>
             </div>
           </motion.div>
@@ -158,15 +158,15 @@ export function Footer() {
             <div className="space-y-3 text-white/80">
               <p className="flex justify-between">
                 <span>Monday - Friday</span>
-                <span>11:00 - 22:00</span>
+                <span>8:00 AM - 12:00 PM</span>
               </p>
               <p className="flex justify-between">
-                <span>Saturday</span>
-                <span>11:00 - 23:00</span>
+                <span>Monday - Friday</span>
+                <span>5:00 PM - 9:00 PM</span>
               </p>
               <p className="flex justify-between">
-                <span>Sunday</span>
-                <span>12:00 - 22:00</span>
+                <span>Saturday-Sunday</span>
+                <span>8:00 AM - 9:00 PM</span>
               </p>
               <div className="pt-4">
                 <p className="text-secondary font-semibold" style={{ color: theme.colors.secondary }}>

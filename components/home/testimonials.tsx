@@ -195,7 +195,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Social Proof */}
-        <motion.div
+        {/* <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -227,10 +227,10 @@ const TestimonialsSection = () => {
               </p>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* CTA Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.7, delay: 0.5 }}
@@ -245,7 +245,7 @@ const TestimonialsSection = () => {
           >
             Book Your Table Now
           </Button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

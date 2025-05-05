@@ -50,7 +50,7 @@ const AboutSection = () => {
       image: "/about-values.jpg"
     },
     team: {
-      title: "Our Team",
+      title: "Our Moto",
       content: "Behind every delicious dish at Sahoos Kitchen is our exceptional team of passionate chefs, attentive servers, and dedicated staff who work tirelessly to create memorable experiences for our guests. Led by Executive Chef Sahoo, our culinary experts bring decades of combined experience and a shared commitment to excellence in every aspect of our service.",
       image: "/about-team.jpg"
     }
@@ -175,7 +175,7 @@ const AboutSection = () => {
         </motion.div>
 
         {/* Stats Section */}
-        <motion.div 
+        {/* <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
@@ -197,7 +197,7 @@ const AboutSection = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

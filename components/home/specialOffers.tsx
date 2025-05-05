@@ -9,35 +9,36 @@ import Link from 'next/link';
 const specialOffers = [
   {
     id: 1,
-    title: "Weekend Dinner Buffet",
-    description: "Enjoy our lavish buffet with over 30 dishes including starters, main courses, and desserts.",
-    discount: "20% Off",
-    validUntil: "Every Friday & Saturday",
-    timing: "7:00 PM - 11:00 PM",
-    image: "https://sahooskitchen.com/p1.JPG",
+    title: "2kg Biryani Combo (Veg & Non-Veg)",
+    description: "Perfect for gatherings! Enjoy 2kg of our signature biryani with both veg and non-veg options.",
+    discount: "10% - 20% Off",
+    validUntil: "Limited Time Offer",
+    timing: "Pre-order required",
+    image: "https://img.freepik.com/free-photo/plate-biryani-with-bunch-food-it_505751-3819.jpg?t=st=1744883510~exp=1744887110~hmac=35903f311568138cb16bbd12248f72327b91f3b587ada6ab7c42fa7475365450&w=826",
     color: "primary",
   },
   {
     id: 2,
-    title: "Lunch Special Menu",
-    description: "Experience a quick and delicious lunch with our special combo meals perfect for your midday break.",
-    discount: "15% Off",
-    validUntil: "Monday to Friday",
-    timing: "12:00 PM - 3:00 PM",
-    image: "https://sahooskitchen.com/menu/veg/dahi-kabab.JPG",
+    title: "Bulk Dahivada Orders",
+    description: "Order 16 pieces of delicious Dahivada for just ₹500. Great for parties and events!",
+    discount: "Bulk Order Deal",
+    validUntil: "On Advance Orders",
+    timing: "Pickup/Delivery Available",
+    image: "https://sahooskitchen.com/menu/veg/dahi-wada.JPG",
     color: "secondary",
   },
   {
     id: 3,
-    title: "Family Celebration Package",
-    description: "Special package for family celebrations including custom menu, cake, and dedicated service.",
-    discount: "Free Dessert",
-    validUntil: "Valid all days",
-    timing: "Booking required",
-    image: "https://sahooskitchen.com/menu/veg/dahi-wada.JPG",
+    title: "Meal Subscriptions",
+    description: "Subscribe for regular meals and get 20% off on monthly plans or 10% off on 15-day plans.",
+    discount: "Up to 20% Off",
+    validUntil: "Ongoing",
+    timing: "Flexible Timings",
+    image: "https://sahooskitchen.com/menu/veg/dahi-kabab.JPG",
     color: "accent",
   }
 ];
+
 
 const SpecialOffersSection = () => {
   const sectionRef = useRef(null);
@@ -147,7 +148,7 @@ const SpecialOffersSection = () => {
         </motion.div>
 
         {/* Newsletter Subscription */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.7, delay: 0.6 }}
@@ -176,7 +177,7 @@ const SpecialOffersSection = () => {
           <p className="mt-4 text-xs text-gray-500">
             By subscribing, you agree to receive marketing communications from us. Don't worry, we respect your privacy.
           </p>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

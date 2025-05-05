@@ -56,12 +56,12 @@ const ContactSection = () => {
     {
       icon: <MapPin className="w-5 h-5 text-secondary" />,
       title: "Location",
-      details: ["123 Culinary Street", "Foodie District, Flavor City - 123456"]
+      details: [" 2A Phoenix Appartment, ", "TrambakRoad - Nashik"]
     },
     {
       icon: <Clock className="w-5 h-5 text-secondary" />,
       title: "Opening Hours",
-      details: ["Monday - Sunday: 11:00 AM - 11:00 PM"]
+      details: ["Monday - Sunday: 8:00 AM - 9:00 PM"]
     }
   ];
 
@@ -114,7 +114,7 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition"
-                    placeholder="John Doe"
+                    placeholder="Sahoo"
                   />
                 </div>
                 <div>
@@ -127,7 +127,7 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition"
-                    placeholder="john@example.com"
+                    placeholder="sahoo@example.com"
                   />
                 </div>
               </div>
