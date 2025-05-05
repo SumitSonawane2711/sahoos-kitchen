@@ -70,9 +70,9 @@ export function Footer() {
               <a href="#" className="text-white/60 hover:text-secondary transition-colors">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="text-white/60 hover:text-secondary transition-colors">
+              {/* <a href="#" className="text-white/60 hover:text-secondary transition-colors">
                 <Twitter className="h-6 w-6" />
-              </a>
+              </a> */}
             </div>
           </motion.div>
 
