@@ -89,11 +89,11 @@ export function Footer() {
             <div className="space-y-4">
               <p className="flex items-center text-white/80">
                 <Phone className="h-5 w-5 mr-3 text-secondary" style={{ color: theme.colors.secondary }} />
-                +91 (555) 123-4567
+                +91 91751 59015
               </p>
               <p className="flex items-center text-white/80">
                 <Mail className="h-5 w-5 mr-3 text-secondary" style={{ color: theme.colors.secondary }} />
-                info@sahooskitchen.com
+                sumitradsahu@gmail.com
               </p>
               <p className="flex items-center text-white/80">
                 <MapPin className="h-5 w-5 mr-3 text-secondary" style={{ color: theme.colors.secondary }} />

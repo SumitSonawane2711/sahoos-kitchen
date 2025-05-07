@@ -46,12 +46,12 @@ const ContactSection = () => {
     {
       icon: <Phone className="w-5 h-5 text-secondary" />,
       title: "Phone",
-      details: ["+91 123 456 7890", "+91 987 654 3210"]
+      details: ["+91 91751 59015", "+91 91751 59015"]
     },
     {
       icon: <Mail className="w-5 h-5 text-secondary" />,
       title: "Email",
-      details: ["info@sahooskitchen.com", "support@sahooskitchen.com"]
+      details: ["sumitradsahu@gmail.com", "sumitradsahu@gmail.com"]
     },
     {
       icon: <MapPin className="w-5 h-5 text-secondary" />,
@@ -273,19 +273,19 @@ const ContactSection = () => {
             {[
               {
                 q: "How can I make a reservation?",
-                a: "You can make a reservation by calling us, using our online booking system, or filling out the contact form on this page. We recommend booking at least 2-3 days in advance."
+                a: "You can make a reservation by calling us or filling out the contact form on this page. We recommend booking at least 2-3 days in advance."
               },
               {
-                q: "Do you offer catering services?",
-                a: "Yes, we offer catering services for events of all sizes. Please contact us with details about your event, and we'll provide a customized quote."
+                q: "What type of food do you serve?",
+                a: "Along with authentic Odia cuisine, we offer a variety of Indian home-style dishes."
               },
               {
                 q: "Are there vegetarian or vegan options?",
                 a: "Absolutely! We have a wide range of vegetarian dishes, and many can be adapted to be vegan-friendly. Just let us know your dietary preferences when ordering."
               },
               {
-                q: "Is there parking available?",
-                a: "Yes, we have ample parking space available for our guests right in front of the restaurant."
+                q: "Do you offer home delivery?",
+                a: "Yes, we provide home delivery across Nashik. You can place your order by calling us directly."
               }
             ].map((faq, index) => (
               <motion.div
