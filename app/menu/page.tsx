@@ -422,8 +422,21 @@ export default function MenuPage() {
         {/* Desktop Search and Filter Section - hidden on mobile */}
         <div className="hidden sm:block mb-8 space-y-4">
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
+
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+            <Input
+              type="text"
+              placeholder="Search dishes..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-8 py-5 h-10 text-sm border-gray-200 rounded-full"
+            />
+          </div>
+          
             {/* Filter and Sort Options */}
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+
               {/* Dietary Preference Filter */}
               <div className="w-full sm:w-48">
                 <Select value={selectedDietaryPreference} onValueChange={setSelectedDietaryPreference}>
