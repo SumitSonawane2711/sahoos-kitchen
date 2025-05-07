@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Utensils, Award, Users, Clock } from 'lucide-react';
 
 // Define a type for the tab keys
-type TabKey = 'story' | 'values' | 'team';
+type TabKey = 'story' | 'values' | 'motto';
 
 const AboutSection = () => {
   const [activeTab, setActiveTab] = useState<TabKey>('story');
@@ -41,18 +41,18 @@ const AboutSection = () => {
   const tabContent = {
     story: {
       title: "Our Story",
-      content: "Sahoos Kitchen began with a simple vision – to share the authentic flavors of traditional cuisine with the world. Founded by Chef Sahoo in 2010, our journey started as a small family-owned restaurant with recipes passed down through generations. Today, we've grown into a beloved culinary destination while staying true to our roots and commitment to quality.",
-      image: "/about-story.jpg"
+      content: "I still remember the day we decided to start our little cloud kitchen. It wasn’t a business pitch or a grand plan written on paper — it was a feeling, a calling of sorts. My name is Sumitra Sahoo, and if you’ve ever tasted one of our meals, you’ve probably tasted a little bit of my soul too.",
+      image: "/about/story.jpeg"
     },
     values: {
       title: "Our Values",
-      content: "At Sahoos Kitchen, we believe that food is more than sustenance—it's an expression of culture, heritage, and love. We are committed to using only the freshest, locally-sourced ingredients, prepared with traditional techniques and a modern twist. Every dish we serve is crafted with care, ensuring an unforgettable dining experience that honors our culinary traditions.",
-      image: "/about-values.jpg"
+      content: "At Sahoo’s Cloud Kitchen, hygiene isn’t just a practice — it’s a promise. We prioritize cleanliness at every step, from our spotless kitchen to the way we handle ingredients and pack each meal. Every dish is prepared in a neat, sanitized environment, ensuring it reaches you fresh and safe. We take pride in serving clean, home-style food that is completely free from artificial colors and additives — just pure, wholesome goodness made with honesty. For us, health and hygiene are as important as taste, because we believe that feeding someone is a sacred act — and it must be done with both love and responsibility.",
+      image: "/about/values.jpeg"
     },
-    team: {
+    motto: {
       title: "Our Moto",
-      content: "Behind every delicious dish at Sahoos Kitchen is our exceptional team of passionate chefs, attentive servers, and dedicated staff who work tirelessly to create memorable experiences for our guests. Led by Executive Chef Sahoo, our culinary experts bring decades of combined experience and a shared commitment to excellence in every aspect of our service.",
-      image: "/about-team.jpg"
+      content: "At Sahoo’s Cloud Kitchen, our heart beats for two things: purity and tradition. We prepare every meal in a clean, hygienic kitchen where neatness and safety come first. Our food is always fresh, color-free, and made without artificial additives — just the way you’d expect in a caring home. But beyond cleanliness, our true pride lies in promoting the rich, diverse flavors of Odisha. From classic comfort foods to hidden gems of Odia cuisine, every dish we serve is a tribute to our roots. This isn’t just cooking — it’s our way of sharing Odisha’s culinary heritage with the world, one soulful bite at a time.",
+      image: "/about/motto.jpeg"
     }
   };
 
@@ -60,7 +60,7 @@ const AboutSection = () => {
     <section className="py-32 bg-gradient-to-b from-white to-amber-50">
       <div className="container mx-auto px-4">
         {/* Page Title */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -75,19 +75,18 @@ const AboutSection = () => {
 
         {/* Tab Navigation */}
         <div className="flex flex-wrap justify-center mb-12 gap-2">
-          {['story', 'values', 'team'].map((tab) => (
+          {['story', 'values', 'motto'].map((tab) => (
             <motion.button
               key={tab}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveTab(tab as TabKey)}
-              className={`px-6 py-3 rounded-full text-sm uppercase font-bold transition-all duration-300 ${
-                activeTab === tab
-                  ? 'bg-primary text-white shadow-lg'
-                  : 'bg-white text-primary border border-primary/20 hover:border-primary'
-              }`}
+              className={`px-6 py-3 rounded-full text-sm uppercase font-bold transition-all duration-300 ${activeTab === tab
+                ? 'bg-primary text-white shadow-lg'
+                : 'bg-white text-primary border border-primary/20 hover:border-primary'
+                }`}
             >
-              {tab === 'story' ? 'Our Story' : tab === 'values' ? 'Our Values' : 'Our Team'}
+              {tab === 'story' ? 'Our Story' : tab === 'values' ? 'Our Values' : 'Our motto'}
             </motion.button>
           ))}
         </div>
@@ -124,25 +123,30 @@ const AboutSection = () => {
               initial="hidden"
               animate="visible"
             >
-              <motion.h2 
+              <motion.h2
                 variants={itemVariants}
                 className="text-3xl md:text-4xl font-bold text-primary mb-6"
               >
                 {tabContent[activeTab].title}
               </motion.h2>
-              <motion.p 
+              <motion.p
                 variants={itemVariants}
                 className="text-gray-700 text-lg leading-relaxed mb-8"
               >
                 {tabContent[activeTab].content}
               </motion.p>
-              
+
               {activeTab === 'story' && (
-                <motion.p variants={itemVariants} className="text-gray-700 text-lg leading-relaxed mb-8">
-                  What makes us special is our dedication to preserving the authenticity of our recipes while adapting to modern tastes. Each ingredient is carefully selected, each spice perfectly balanced, and each dish prepared with love and respect for our heritage.
-                </motion.p>
+                <>
+                  <motion.p variants={itemVariants} className="text-gray-700 text-lg leading-relaxed mb-8">
+                    Cooking has always been my love language. Whether it was a simple dal or a festive spread during Diwali, I’ve always believed that food is more than just nourishment — it’s emotion, it’s care, it’s warmth served on a plate. Over the years, our family — the Sahoos — became known among friends and neighbors not just for our friendly nature, but for the way we opened our doors and hearts during every occasion.
+                  </motion.p>
+
+
+                </>
+
               )}
-              
+
               {activeTab === 'values' && (
                 <motion.ul variants={itemVariants} className="space-y-3 mb-8">
                   {['Authenticity', 'Quality', 'Community', 'Sustainability'].map((value, index) => (
@@ -153,26 +157,41 @@ const AboutSection = () => {
                   ))}
                 </motion.ul>
               )}
-              
-              {activeTab === 'team' && (
+
+              {activeTab === 'motto' && (
                 <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4 mb-8">
-                  {['Chef Sahoo - Executive Chef', 'Rani Patel - Head Chef', 'Arjun Kumar - Manager', 'Priya Sen - Customer Relations'].map((member, index) => (
-                    <div key={index} className="bg-white/80 p-3 rounded-lg shadow-sm">
-                      <p className="text-primary font-medium">{member}</p>
-                    </div>
-                  ))}
+
                 </motion.div>
               )}
-              
+
               {/* <motion.div variants={itemVariants}>
                 
                 <button className="bg-secondary text-primary px-8 py-3 rounded-full text-lg font-semibold hover:bg-secondary-dark transition-all duration-300 shadow-md hover:shadow-lg">
-                  {activeTab === 'team' ? 'Join Our Team' : activeTab === 'values' ? 'Learn More' : 'Visit Us'}
+                  {activeTab === 'motto' ? 'Join Our motto' : activeTab === 'values' ? 'Learn More' : 'Visit Us'}
                 </button>
               </motion.div> */}
             </motion.div>
           </div>
         </motion.div>
+
+        {/* story section */}
+        {activeTab === 'story' && (
+          <motion.div variants={itemVariants} className=" gap-4 my-10">
+            <motion.p variants={itemVariants} className="text-gray-700 text-lg leading-relaxed mb-8">
+              So when the idea of Sahoo’s Cloud Kitchen was born, it wasn’t with the thought of profit. It was about extending that warmth beyond our walls — to feed strangers like family, to give working bachelors the taste of home, and to remind people that food made with love can heal tired souls.
+
+              Each dish that leaves our kitchen carries a part of me. When I knead dough for parathas, I think of my children rushing to school. When I stir my slow-cooked sabzis, I recall my mother’s hands guiding mine. This kitchen isn’t just a space filled with ingredients — it’s filled with memories, traditions, and a lot of heartfelt intentions.
+
+            </motion.p>
+            <motion.p variants={itemVariants} className="text-gray-700 text-lg leading-relaxed mb-8">
+              We’re not the biggest or the fanciest, but what we serve comes with genuine care. We greet every customer with a smile, even if they only interact with us through a phone call. Because for us, you’re not just an order ID — you’re someone we are grateful to serve.
+
+              Sahoo’s Cloud Kitchen is our way of saying, “Come, eat. You’re home.”
+              And if you ever do try one of our meals, know that it wasn’t just cooked — it was loved into existence.
+            </motion.p>
+          </motion.div>
+        )}
+
 
         {/* Stats Section */}
         {/* <motion.div 

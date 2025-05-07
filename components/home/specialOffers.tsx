@@ -34,7 +34,7 @@ const specialOffers = [
     discount: "Up to 20% Off",
     validUntil: "Ongoing",
     timing: "Flexible Timings",
-    image: "https://sahooskitchen.com/menu/veg/dahi-kabab.JPG",
+    image: "https://img.freepik.com/premium-photo/indian-hindu-veg-thali-food-platter-selective-focus_466689-36029.jpg?w=740",
     color: "accent",
   }
 ];

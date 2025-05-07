@@ -161,7 +161,7 @@ const HeroSection = () => {
       </div>
 
       {/* Features Cards */}
-      <div className="absolute -bottom-28 sm:-bottom-16 md:-bottom-12 left-0 right-0 z-20">
+      <div className="absolute -bottom-28 sm:-bottom-16 md:-bottom-24 lg:-bottom-12 left-0 right-0 z-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {features.map((feature, index) => (
@@ -173,7 +173,7 @@ const HeroSection = () => {
               >
                 <Card className="bg-white/90 backdrop-blur-sm border-none shadow-xl hover:shadow-2xl transition-shadow">
                   <CardContent className="p-4 sm:p-6">
-                    <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                    <div className="sm:flex  items-center gap-3 sm:gap-4">
                       <div className="bg-accent/20 p-1 sm:p-3 rounded-full" style={{ backgroundColor: `${theme.colors.accent}20` }}>
                         {getIcon(feature.icon)}
                       </div>
