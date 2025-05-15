@@ -28,13 +28,13 @@ const breakfastMenus: MenuImageType[] = [
   },
   {
     id: "Breakfast-Subscription",
-    title: "Non-Vegetarian Breakfast Menu",
+    title: "Breakfast Subscription Menu",
     path: "/menu/breakfast.jpeg", // Placeholder - Update with actual path
     description: "Delicious non-vegetarian breakfast specialties",
   },
   {
     id: "Weekly-Combo Menu",
-    title: "Non-Vegetarian Breakfast Menu",
+    title: "Weekly Combo Menu",
     path: "/menu/weekly-combo.jpeg", // Placeholder - Update with actual path
     description: "Delicious non-vegetarian breakfast specialties",
   },
